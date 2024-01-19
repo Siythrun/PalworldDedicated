@@ -65,12 +65,15 @@ fi
 
 community_opts=""
 if [[ -n $IS_PUBLIC ]] && [[ $IS_PUBLIC == "true" ]];then
+    printf "Setting To Community Serrver"
     community_opts="EpicApp=PalServer"
 fi
 if [[ -n $PUBLIC_IP ]];then
+    printf "PubIP is $PUBLIC_IP"
     community_opts="$community_opts -publicip=$PUBLIC_IP"
 fi
 if [[ -n $PUBLIC_PORT ]];then
+    printf "PubPort is $PUBLIC_PORT"
     community_opts="$community_opts -publicport=$PUBLIC_PORT"
 fi
 
@@ -78,6 +81,6 @@ if [ ! -f "/opt/palworld/PalServer.sh" ]; then
     printf "Palworld launch script is missing.\\n"
     exit 1
 fi
-
+printf "Here is the run command ./PalServer.sh port=$PORT players=$PLAYERS $MULTITHREAD $community_opts $@"
 exec ./PalServer.sh port="$PORT" players=$PLAYERS "$MULTITHREAD" "$community_opts" "$@"
 
