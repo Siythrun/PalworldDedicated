@@ -15,6 +15,7 @@ ENV PUID="1000"
 EXPOSE 8211/udp 8211/tcp
 
 RUN useradd -ms /bin/bash steam 
+RUN gosu nobody true
 
 RUN mkdir -p /opt/palworld \
  && chown steam:steam /opt/palworld

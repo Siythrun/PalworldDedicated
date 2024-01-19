@@ -76,7 +76,7 @@ if [[ "${ROOTLESS,,}" != "true" ]]; then
 fi
 
 if [[ "${ROOTLESS,,}" != "true" ]]; then
-  chown -R "$PUID":"$PGID" /config /home/steam /tmp/dumps
+  chown -R "$PUID":"$PGID" /opt/palworld /home/steam /tmp/dumps
   exec gosu "$USER" "/home/steam/run.sh" "$@"
 else
   exec "/home/steam/run.sh" "$@"
