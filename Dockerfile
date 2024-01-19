@@ -22,6 +22,7 @@ RUN mkdir -p /opt/palworld \
 WORKDIR /opt/palworld
 
 COPY init.sh /
-RUN chmod +x /init.sh
+COPY --chown=steam:steam run.sh /home/steam/
+RUN chmod +x /init.sh /home/steam/run.sh
 
 ENTRYPOINT [ "/init.sh" ]
