@@ -14,7 +14,7 @@ EXPOSE 8211/udp 8211/tcp
 
 WORKDIR /opt/palworld
 
-COPY init.sh ./
-RUN chmod +x ./init.sh
+COPY init.sh /
+RUN chmod +x /init.sh
 
-ENTRYPOINT [ "./init.sh" ]
+ENTRYPOINT [ "/init.sh" ]
