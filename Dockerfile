@@ -14,8 +14,12 @@ ENV PUID="1000"
 
 EXPOSE 8211/udp 8211/tcp
 
-RUN useradd -ms /bin/bash steam 
-RUN gosu nobody true
+RUN set -x \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y gosu xdg-user-dirs --no-install-recommends\
+ && rm -rf /var/lib/apt/lists/* \
+ && useradd -ms /bin/bash steam \
+ && gosu nobody true
 
 RUN mkdir -p /opt/palworld \
  && chown steam:steam /opt/palworld
