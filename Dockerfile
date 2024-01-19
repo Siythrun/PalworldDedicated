@@ -8,9 +8,16 @@ ENV SKIPUPDATE=false
 ENV IS_PUBLIC=false
 ENV PUBLIC_IP=
 ENV PUBLIC_PORT=
+ENV PGID="1000"
+ENV PUID="1000" 
 
 
 EXPOSE 8211/udp 8211/tcp
+
+RUN useradd -ms /bin/bash steam 
+
+RUN mkdir -p /opt/palworld \
+ && chown steam:steam /opt/palworld
 
 WORKDIR /opt/palworld
 
