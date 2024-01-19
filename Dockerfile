@@ -19,5 +19,7 @@ USER steam
 
 WORKDIR /opt/palworld
 
+RUN alias steamcmd="/home/steam/steamcmd/steamcmd.sh"
+
 
 ENTRYPOINT [ "/init.sh" ]
