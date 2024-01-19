@@ -12,9 +12,12 @@ ENV PUBLIC_PORT=
 
 EXPOSE 8211/udp 8211/tcp
 
-WORKDIR /opt/palworld
-
+USER root
 ADD init.sh /init.sh
 RUN chmod +x /init.sh
+USER steam
+
+WORKDIR /opt/palworld
+
 
 ENTRYPOINT [ "/init.sh" ]
