@@ -15,7 +15,5 @@ EXPOSE 8211/udp 8211/tcp
 WORKDIR /opt/palworld
 
 COPY init.sh /
-COPY run.sh /home/steam/
-RUN chmod +x /init.sh /home/steam/run.sh
 
 ENTRYPOINT [ "/init.sh" ]
