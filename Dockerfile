@@ -15,7 +15,6 @@ EXPOSE 8211/udp 8211/tcp
 USER root
 ADD init.sh /init.sh
 RUN chmod +x /init.sh
-RUN ln -s /home/steam/steamcmd/steamcmd.sh /usr/local/sbin/steamcmd
 USER steam
 
 WORKDIR /opt/palworld
