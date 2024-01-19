@@ -1,4 +1,4 @@
-FROM steamcmd/steamcmd:latest
+FROM steamcmd/steamcmd:ubuntu-18
 
 ENV PORT=8211
 ENV PLAYERS=32
